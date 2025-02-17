@@ -4,7 +4,6 @@ public class Project_Kelly_Garcia
 {   
    public static void main(String[] args)
    {
-      //declare variables
       String policyNumber;
       String providerName;
       String firstName;
@@ -15,7 +14,7 @@ public class Project_Kelly_Garcia
       double weight;
       Scanner keyboard = new Scanner(System.in);
    
-      //prompt the user to enter information about the Policy   
+      // Have the user input information   
       System.out.print("Please enter the Policy Number: ");
       policyNumber = keyboard.nextLine();
             
@@ -41,13 +40,11 @@ public class Project_Kelly_Garcia
       System.out.print("Please enter the Policyholder's Weight (in pounds): ");
       weight = keyboard.nextDouble();
       
-      //create a Policy object
       Policy policy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStatus, height, weight);
       
-      //put a blank line before the output
       System.out.println();
       
-      //display information about the Policy
+      // Display info about the Policy
       System.out.println("Policy Number: " + policy.getPolicyNumber());
       System.out.println("Provider Name: " + policy.getProviderName());
       System.out.println("Policyholder's First Name: " + policy.getFirstName());
