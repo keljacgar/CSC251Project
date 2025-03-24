@@ -9,7 +9,9 @@ public class Policy
    private double height;
    private double weight;
 
-   // Constructors
+   /* Default constructor for policy
+   *  Intializes fields with default values
+   */
    public Policy()
    {
       policyNumber = "";
@@ -22,48 +24,69 @@ public class Policy
       weight = 0;
    }
    
-   // Getters
+   /* Gets the policy number
+   *  @return the policy number as a string
+   */
    public String getPolicyNumber()
    {
       return policyNumber;
    }
-   
+   /** Retrieves the provider's name
+   *   @return the provider's name as a string
+   */
    public String getProviderName()
    {
       return providerName;
    }
-   
+   /** Retrieves the policy holder's first name.
+   *   @return the first name of the policy holder as a string
+   */
    public String getFirstName()
    {
       return firstName;
    }
-   
+   /** Retrieves the policy holder's last name.
+   *   @return the last name of the policy holder as a string
+   */
    public String getLastName()
    {
       return lastName;
    }
    
+   /** Retrieves policy holder's age
+   *   @return the age of the policyholder as an integer
+   */
    public int getAge()
    {
       return age;
    }
-   
+   /** Retrieves the policy holder smoking status
+   *   @return the smoking status of the policy holder as a string
+   */
    public String getSmokingStatus()
    {
       return smokingStatus;
    }
    
+   /** Retrieves the policy holder heigh in inches
+   *   @return the height of the policy holder as a double
+   */
    public double getHeight()
    {
       return height;
    }
    
+   /** Policy holders weight in pounds
+   *   @return the weight of the policy holder as a double
+   */
    public double getWeight()
    {
       return weight;
    }
    
-   // Calculates BMI for thr policy holder
+   /** Calculates BMI for the policy holder
+   *   @return the BMI value as a double
+   */
       public double getBMI()
    {
       final double CONVFACTOR = 703;
@@ -71,7 +94,9 @@ public class Policy
       return (weight * CONVFACTOR) / (height * height);
    }
    
-   // Calculates the price of the policy
+   /** Calculates the price of the policy based off age, smoking status, & BMI.
+   *   @return the price of the policy as a double
+   */
    public double getPrice()
    {
       final double Base_Price = 600;
