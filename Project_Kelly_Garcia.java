@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Project_Kelly_Garcia {   
    public static void main(String[] args) {
    ArrayList<Policy> policies = new Array<>();
+   int smokerCount = 0, nonSmokerCount = 0;
    
    try (Scanner fileScanner = new Scanner(new File("PolicyInformation.txt"))) {
       while (fileScanner.hasNextLine()) {
@@ -17,19 +18,26 @@ public class Project_Kelly_Garcia {
       String smokingStatus = fileScanner.nextLine();
       double height = Double.parseDouble(fileScanner.next());
       double weight = DOuble.parseDouble(fileScanner.next());
-      Scanner keyboard = new Scanner(System.in);
    
       Policy policy = new Policy(policyNumber,providerName, firstName, lastName, age, smokingStatus, height, weight);
       policies.add(policy);
+      if (smokingStatus.equalsIgnoreCase("smoker")) {
+         smokerCount++;
+         } else {
+            nonSmokerCount++;
+         }
   }
 }     catch (FileNotFoundException e) {
          System.out.println("ERROR: PolicyInformation.txt not found.");
          return;
   }
       
-      // Display info about the Policies
+      // Display info about all Policies
+      System.out.println("\nPolicy Details: \n");
       for (Policy policy : policies) {
          System.out.println(policy);
       }
+      System.out.printf("\nThe number of policies with a smoker is: %d%n", smokerCount);
+      System.out.printf("The number of policies with a non-smoker is: %d%n", nonSmokerCount);
    }
 }
