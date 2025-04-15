@@ -18,8 +18,10 @@ public class Project_Kelly_Garcia {
       String smokingStatus = fileScanner.nextLine();
       double height = Double.parseDouble(fileScanner.next());
       double weight = DOuble.parseDouble(fileScanner.next());
+      
+      PolicyHolder policyHolder = new PolicyHolder(firstName, lastName, age, smokingStatus, height, weight);
    
-      Policy policy = new Policy(policyNumber,providerName, firstName, lastName, age, smokingStatus, height, weight);
+      Policy policy = new Policy(policyNumber,providerName);
       policies.add(policy);
       if (smokingStatus.equalsIgnoreCase("smoker")) {
          smokerCount++;
